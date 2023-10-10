@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <title>DeLong Enterprises</title>
+        <style type="text/css">
+            @import url(style.css);
+        </style>
+    </head>
+    <body>
+        <div align="center">
+            <img src="DeLong.jpg">
+        </div>
+        <div>
+            <h3>Travel Expense Report</h3>
+            <hr/>
+        </div>
+        <div>
+            <form>
+                <div>
+                    <br/>
+                    <label for="firstname">1) First name:</label>
+                    <input type="text" name="firstname" id="firstname">&nbsp;
+                    <label for="lastname">Lastname:</label>
+                    <input type="text" name="lastname" id="lastname">
+                </div>
+                <div>
+                    <br/>
+                    <label for="number">2) Social Security Number:</label>
+                    <input type="number" name="number" id="number">
+                </div>
+                <div>
+                    <br/>
+                    <label for="Department">3) Department:</label>
+                    <select name="Department">
+                        <option value="1">Accounting</option>
+                        <option value="2"> Business Analytic </option>
+                        <option value="3"> Marketing </option>
+                    </select>
+                </div>
+                <div>
+                    <br/>
+                    <label for="describe">4) Describe the purpose of your trip:</label>
+                    <br/>
+                    <textarea name="describe" id="describe" cols="50" rows="7"></textarea>
+                </div>
+                <div>
+                    <br/>
+                    <label for="itermize">5) Intermize your travel expenses</label>
+                    <table border="1">
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr>
+                            <td><input type="date" name="mm/dd/yy1" id="mm/dd/yy1" placeholder="mm/dd/yy"></td>
+                            <td><input type="text" name="des1" id="des1"></td>
+                            <td>
+                                <select name="Category1">
+                                    <option value="1">Meal</option>
+                                    <option value="2"> Fish </option>
+                                    <option value="3"> Fruit </option>
+                                </select>
+                            </td>
+                            <td><input type="number" name="amount1" id="amount1"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="date" name="mm/dd/yy2" id="mm/dd/yy2" placeholder="mm/dd/yy"></td>
+                            <td><input type="text" name="des2" id="des2"></td>
+                            <td>
+                                <select name="Category2">
+                                    <option value="1">Meal</option>
+                                    <option value="2"> Fish </option>
+                                    <option value="3"> Fruit </option>
+                                </select>
+                            </td>
+                            <td><input type="number" name="amount2" id="amount2"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="date" name="mm/dd/yy3" id="mm/dd/yy3" placeholder="mm/dd/yy"></td>
+                            <td><input type="text" name="des3" id="des3"></td>
+                            <td>
+                                <select name="Category3">
+                                    <option value="1">Meal</option>
+                                    <option value="2"> Fish </option>
+                                    <option value="3"> Fruit </option>
+                                </select>
+                            </td>
+                            <td><input type="number" name="amount3" id="amount3"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="date" name="mm/dd/yy4" id="mm/dd/yy4" placeholder="mm/dd/yy"></td>
+                            <td><input type="text" name="des4" id="des4"></td>
+                            <td>
+                                <select name="Category4">
+                                    <option value="1">Meal</option>
+                                    <option value="2"> Fish </option>
+                                    <option value="3"> Fruit </option>
+                                </select>
+                            </td>
+                            <td><input type="number" name="amount4" id="amount4"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <br/>
+                    <label for="submit">6) Have you submittes your receipts?</label>
+                    <input type="radio" name="yes" id="yes"> 
+                    <label for="yes">Yes</label>
+                    <input type="radio" name="no" id="no"> 
+                    <label for="no">No</label>
+                </div>
+                <div>
+                    <input type="submit" value="Submit travel expenses" name="login" id="login">
+                    <input type="reset" value="Reset" name="clear" id="reset">
+                </div>
+                <div>
+                    <p>Questions? Contact Debbie Larson in Accounting (ext.2150)</p>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

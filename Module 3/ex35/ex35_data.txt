@@ -1,0 +1,35 @@
+﻿External Styles
+
+Nội dung thực hành
+
+Part 1: XHTML and CSS
+XHTML : Basic tags, Lists, Links
+Exercise 01 (01-template.htm)
+Exercise 02 (02-Course Detail.htm)
+XHTML : Images, Tables
+Exercise 01
+Exercise 02
+Exercise 03
+Exercise 04
+CSS :
+Exercise 01
+Exercise 02
+Exercise 03
+Exercise 04
+Part 2: Basic of Javascript Programming
+Javascript - Giới thiệu về Lập trình script
+Exercise 01
+Javascript - Các cấu trúc điều khiển - p1
+Exercise 01
+Javascript - Các cấu trúc điều khiển - p2
+Exercise 01
+Javascript - Hàm
+Exercise 01
+Javascript - Mảng
+Javascript - Đối tượng
+Part 3: DHTML
+DHTML - Mô hình Đối Tượng và Collections
+DHTML - Mô hình Sự Kiện
+DHTML - Filters và Transitions
+DHTML - DataBinding
+Copyright © 2017 -

@@ -1,0 +1,28 @@
+#staff
+{ padding: left;
+    float:left;
+    margin-bottom: 10pt;
+    margin-left: 5pt;
+    
+    text-align: justify;
+    font-size:Arial, Helvetica, sans-serif;
+}
+#staff td, #staff th 
+{
+font-size:Arial, Helvetica, sans-serif;
+
+
+}
+#staff th
+{
+font-size:1.1em; 
+text-align:center; 
+padding-top:4px; 
+padding-bottom:4px; 
+background-color:#ff7124; 
+color:#ffffff;
+}
+#staff td
+{
+text-align: left top;
+}

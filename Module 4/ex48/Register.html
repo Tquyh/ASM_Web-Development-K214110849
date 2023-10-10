@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>Register</title>
+        <style>
+            @import url(style.css);
+        </style>
+    </head>
+    <body>
+        <div align="center">
+        <img src="images/Jackson.gif">
+        </div>
+        <h3 align="center">Registration Form</h3>
+        <p align="center">Register your Jackson Electroniscs products here</p>
+        <form action="processlogin.html" method="post" style="align-content: center;" id="form">
+            <div>
+                <label for="firstname">First name:</label>
+            </div>
+            <div>
+                <input type="text" name="firstname" id="firstname">
+                <label for="lastname">Last name:</label>
+                <input type="text" name="lastname" id="lastname">
+                
+            </div>
+            <div>
+                <label for="address#1">Address #1:</label>
+            </div>
+            <div>
+                <input type="text" name="address#1" id="address#1">
+            </div>
+            <div>
+                <label for="address#2">Address #2:</label>
+            </div>
+            <div>
+                <input type="text" name="address#2" id="address#2">
+            </div>
+            <div>
+                <label for="city">City:</label>
+            </div>
+            <div>
+                <input type="text" name="city" id="city">
+                <label for="state">State:</label>&nbsp;
+                <input type="text" name="state" id="state">
+                <label for="zip">Zip:</label>&nbsp;
+                <input type="text" name="zip" id="zip">
+            </div>
+            <div>
+                <label for="country">Country:</label>
+            </div>
+            <div>
+                <input type="text" name="country" id="country">
+                <hr/>
+            </div>
+             
+            <div>
+                <label for="product">Product:</label>
+            </div>
+            <div>
+                <select name="fruit">
+                    <option value="ScanMaster">Mango</option>
+                    <option value="2"> Guava </option>
+                    <option value="3"> Durian </option>
+                </select>
+            </div>
+            <div>
+                <label for="datepurchased">Date Purchased:</label>
+            </div>
+            <div>
+                <input type="text" name="datepurchased" id="datepurchased">
+            </div>
+            <div>
+                <label for="serial#">Serial #:</label>
+            </div>
+            <div>
+                <input type="text" name="serial#" id="serial#">
+            </div>
+            <div>
+                <label for="usedfor">Used for:</label>
+            </div>
+            <div>
+                <input type="radio" name="usedfor" value="home" checked=“checked” /> Home
+                <input type="radio" name="usedfor" value="educationalinstitution"  check=“checked”/> Educational Institution<br/>
+                <input type="radio" name="usedfor" value="business"  check=“checked”/> Business
+                <input type="radio" name="usedfor" value="other"  check=“checked”/>Other
+            </div>
+            <div>
+                <label for="system">System (check all that apply)</label>&nbsp;
+            </div>
+            <div>
+                <input type="checkbox" name="system" value="home"> Home &nbsp;&nbsp;
+                <input type="checkbox" name="system" value="educationalinstitution"> Educational Institution<br/>
+                <input type="checkbox" name="system" value="business"> Business&nbsp;&nbsp;
+                <input type="checkbox" name="system" value="other">Other
+                <hr/>
+            </div>
+            <div>
+                <label for="comment">Comment</label>&nbsp;
+            </div>
+            <div>
+                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+            </div>
+            <div>&nbsp</div>
+            <div>
+            <input type="submit" value="Click to register" name="login" id="login">
+            <input type="reset" value="Click to cancel" name="clear" id="reset">
+            </div>
+        </form>
+    </body>
+</html>

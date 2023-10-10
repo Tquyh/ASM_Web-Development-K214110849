@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Search Form</title>
+        <style>
+            @import url(style.css);
+        </style>
+    </head>
+    <body>
+        <form>
+            <h2 style="color: red;">Online Classifieds Search Form</h2>
+            <hr/>
+            <p>1) Search for a classified in the following sections</p>
+
+            <div id="choose1">
+                <div>
+                    <input type="radio" name="Employment" id="Employment"> 
+                    <label for="Employment"> Employment</label>
+                </div>
+            
+                <div>
+                    <input type="radio" name="Personal" id="Personal"> 
+                    <label for="Personal">Personal</label>
+                </div>
+                <div>
+                    <input type="radio" name="ForSale" id="ForSale"> 
+                    <label for="ForSale"> For Sale</label>
+                </div>
+            
+                <div>
+                    <input type="radio" name="Miscellanecus" id="Miscellanecus"> 
+                    <label for="Miscellanecus">Miscellanecus</label>
+                </div>
+                <div>
+                    <input type="radio" name="Housing" id="Housing"> 
+                    <label for="Housing"> Housing</label>
+                </div>
+            
+                <div>
+                    <input type="radio" name="All" id="All"> 
+                    <label for="All">All of the above</label>
+                </div>
+            </div>
+        
+            <p>2) Search the following publications</p>
+            <div id="choose2">
+                <div>
+                    <input type="checkbox" name="Times" id="Times">
+                    <label for="Times">Midwest times</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="News" id="News">
+                    <label for="News">Modern news</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="today" id="today">
+                    <label for="today">Employment Today</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="Lakes" id="Lakes">
+                    <label for="Lakes">Great Lakes Classifieds</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="daily" id="daily">
+                    <label for="daily">Middleton Daily</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="dailynews" id="dailynews">
+                    <label for="dailynews">Cashtown Daily News</label>
+                </div>
+            </div>
+            <p> 
+                3) From to
+                <input type="date" name="mm/dd/yy" id="mm/dd/yy" placeholder="mm/dd/yy">
+                &nbsp; to
+                <input type="date" name="mm/dd/yy" id="mm/dd/yy" placeholder="mm/dd/yy">
+            </p>
+            <p>4) Enter a few keywords to describe the classified</p>
+            <textarea name="keywords" id="keywords" cols="60" rows="1"></textarea>
+            
+            <p>5) Click one of the options below</p>
+            <div>
+                <label for="submit"><img src="Search.gif"></label>
+                <input class="button" type="submit" value="" name="submit" id="submit">
+                <a href="help.html"><img src="Help.gif" alt=""></a>
+                <input class="button" type="button" value="" name="button" id="button">
+                <label for="reset"><img src="Cancel.gif"></label>
+                <input class="button" type="reset" value="" name="reset" id="reset">
+            </div>
+        </form>
+    </body>

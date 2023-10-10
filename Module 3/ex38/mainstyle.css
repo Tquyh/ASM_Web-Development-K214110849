@@ -1,0 +1,24 @@
+p{
+    width: 45%;
+    margin-top: 10pt;
+    margin-left: 20pt;
+    float: left
+}
+a.title{
+    font-weight: bold;
+    font-size: 12pt;
+    align-self: left;
+    color:blue
+}
+#spring{
+    background-color: rgb(255, 133, 173);
+}
+#summer{
+    background-color: orange;
+}
+#autumn{
+    background-color: rgb(255, 245, 52);
+}
+#winter{
+    background-color: rgb(218, 218, 218);
+}
