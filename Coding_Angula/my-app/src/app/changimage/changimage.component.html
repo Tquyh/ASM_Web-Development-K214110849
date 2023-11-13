@@ -1,0 +1,23 @@
+<p>changeimage works!</p>
+<div>
+    <button type="button" (click)="processChangeimage(1)"> Image 1</button>
+    &nbsp;
+    <button type="button" (click)="processChangeimage(2)"> Image 2</button>
+</div>
+<div *ngIf="imageIndex==1; then view1; else view2">
+
+</div>
+<ng-template #view1>
+    <img src="images/camtucau.JPG" width="20%">
+</ng-template>
+
+<ng-template #view2>
+    <img src="images/loaken.JPG" width="20%">
+</ng-template>
+
+<p>Demo ngSwitch</p>
+<div [ngSwitch]="imageIndex">
+    <div *ngSwitchCase="1">
+        <img src="images/camtucau.JPG" width="20%">
+    </div>
+</div>
