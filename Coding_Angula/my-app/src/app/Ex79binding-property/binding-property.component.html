@@ -1,0 +1,18 @@
+<p>binding-property works!</p>
+<table border="1">
+    <tr>
+        <td>Name: </td>
+        <td><input [(ngModel)]="name"></td>
+    </tr>
+    <tr>
+        <td>Email: </td>
+        <td><input type="email" value="{{email}}" [disabled]="isDisabled"></td>
+    </tr>
+</table>
+
+<br>
+
+<label>
+Disable Email:
+<input type="checkbox" [(ngModel)]="isDisabled">
+</label>
