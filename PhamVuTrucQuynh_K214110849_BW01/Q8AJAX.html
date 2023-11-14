@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Information</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px;
+        }
+        th{
+            border: 1px solid black;
+            color: white;
+            background-color: green;
+            padding: 8px;
+        }
+        td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <table id="stock-table">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        function getStockInformation() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var stockData = JSON.parse(this.responseText);
+                    displayStockTable(stockData);
+                }
+            };
+            xhttp.open("GET", "https://gadgets.dantri.com.vn/api/finance/stocks", true);
+            xhttp.send();
+        }
+
+        function displayStockTable(stockData) {
+            var tableBody = document.querySelector("#stock-table tbody");
+            tableBody.innerHTML = ""; // Clear existing table data
+
+            stockData.forEach(function(stock) {
+                var row = document.createElement("tr");
+                var codeCell = document.createElement("td");
+                codeCell.textContent = stock.code;
+                row.appendChild(codeCell);
+
+                var priceCell = document.createElement("td");
+                priceCell.textContent = stock.price.toFixed(2);
+                row.appendChild(priceCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        getStockInformation();
+    </script>
+</body>
+</html>

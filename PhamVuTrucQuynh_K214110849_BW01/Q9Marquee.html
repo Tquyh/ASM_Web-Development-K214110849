@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marquee Animation</title>
+    <style>
+        .marquee-container {
+            height: 1000px; /* Adjust height as needed */
+            overflow: hidden;
+        }
+        
+        .marquee-content {
+            animation: marquee 30s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <marquee direction="down" behavior="scroll" scrollamount="3">
+                I declare that all of these solutions are my own and not copied from anyone in this class
+            </marquee>
+        </div>
+    </div>
+</body>
+</html>

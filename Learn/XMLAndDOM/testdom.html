@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function ChangeStyle()
+            {
+                document.getElementById("p1").style.color="blue";
+                document.getElementById("p1").style.fontFamily="Arial";
+            }
+            function ResetStyle(){
+                document.getElementById("p1").style.color="Black"
+                document.getElementById("p1").style.fontFamily="Times New Roman";
+            }
+        </script>
+    </head>
+    <body>
+        <p id="p1">Hello world!</p>
+        <input type="button" onclick="ChangeStyle()" value="Change style" />
+        <input type="reset" onclick="ResetStyle()" value = Reset> 
+    </body>
+</html> 

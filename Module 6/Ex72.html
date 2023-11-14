@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            var Product= [
+                {
+                    "ProductID":"p123",
+                    "ProductName":"DELL Inspiron 14NR",
+                    "Quantity":100,
+                    "UnitPrice":150000
+                },
+                {
+                    "ProductID":"p456",
+                    "ProductName":"HP Inspiron 113",
+                    "Quantity":130,
+                    "UnitPrice":140000
+                }
+            ]
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <th colspan="4", style="background: yellow" align="center">List of Products</th>
+            </tr>
+            <tr style="color: white; background-color: green" align="center">
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>UnitPrice</th>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            document.getElementById("tddepartname").innerHTML=depart.departname;
+            setDataHtml("tddepartid",depart.departid);
+            tablebody=document.getElementById("tablebody");
+            for(i=0;i<depart.employees.length;i++)
+                {
+                    emp=depart.employees[i];
+                    //create tr
+                    tr=document.createElement("tr");
+                    tdid=document.createElement("td");
+                    tdid.innerHTML=emp.employeeid
+                    tr.appendChild(tdid);
+                    tdname_email=document.createElement("td");
+                    tdname_email.innerHTML=emp.name+"<br>"+emp.email;
+                    tr.appendChild(tdname_email);
+                    tablebody.appendChild(tr);
+                }
+        </script>
+    </body>
+</html>

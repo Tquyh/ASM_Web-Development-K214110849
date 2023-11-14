@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            menu1={ CateName:"Coffee",
+                    product: ["Black Coffee","Milk Coffee", "Espresso"]
+                  }
+        </script>
+    <script type="text/javascript">
+        function drawMenu(){
+            div=document.getElementById("myMenu")
+            ul=document.createElement("ul")
+            div.appendChild(ul)
+            for (i=0; i<menu1.product.length; i++){
+                p=menu1.product[i]
+                li=document.createElement("li")
+                li.innerHTML=p
+                ul.appendChild(li)
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <div id="myMenu">
+            <script>
+                drawMenu()
+            </script>
+        </div>
+
+    </body>
+</html>

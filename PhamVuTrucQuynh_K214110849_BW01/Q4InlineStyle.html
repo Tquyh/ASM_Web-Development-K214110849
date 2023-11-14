@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Inline Style</title>
+    <style>
+        .content {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var content = document.getElementById("inline-style-content");
+            content.style.display = "block";
+        };
+    </script>
+</head>
+<body>
+    <div id="inline-style-content" class="content">
+        <h2 style="color:green">Inline Style</h2>
+        <p>
+            Inline styles are used to apply CSS styles directly to individual HTML elements. This is done by using the &ltstyle&gt attribute and specifying the CSS properties and values within the element's opening tag.
+        </p>
+        <p style="background-color:  rgba(167, 201, 66, 0.64);">
+            Example:
+        </p>
+        <pre style="background-color:  rgba(167, 201, 66, 0.64);">
+            <code>
+                &lt;p style="color: red; font-size: 16px;"&gt;This is a paragraph with inline style&lt;/p&gt;
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

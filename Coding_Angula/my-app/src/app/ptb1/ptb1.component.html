@@ -1,0 +1,27 @@
+<p>Phuong trinh bac 1</p>
+<table border="1">
+    <tr>
+        <td>He so a:</td>
+        <td>
+            <input type="number" [(ngModel)]="hesoa">
+        </td>
+    </tr>
+    <tr>
+        <td>He so b:</td>
+        <td>
+            <input type="number" [(ngModel)]="hesob">
+        </td>
+    </tr>
+    <tr>
+        <td>Ket qua:</td>
+        <td>{{ketqua}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <button type="button" (click)="xulyGiai()">Giai</button>
+            &nbsp;
+            <button type="button" (click)="xulyTiep()">Tiep</button>
+        </td>
+    </tr>
+</table>

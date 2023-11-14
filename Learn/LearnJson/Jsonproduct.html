@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var depart={
+            "departid":"DEPT-1",
+            "departname":"R&D Department",
+            "employees":[
+                {
+                    "employeeid":"emp1",
+                    "email":"teo@gmail.com",
+                    "name":"Tèo"
+                },
+                {
+                    "employeeid":"emp2",
+                    "email":"ty@gmail.com",
+                    "name":"Tý"
+                },
+                {
+                    "employeeid":"emp3",
+                    "email":"bin@email.com",
+                    "name":"Bin"
+                },
+            ]
+        }
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>Department ID:</td>
+            <td id="tddepartid"></td>
+        </tr>
+        <tr>
+            <td>Department Name:</td>
+            <td id="tddepartname"></td>
+        </tr>
+        <tbody id="tablebody">
+        </tbody>
+    </table>
+    <script type ="text/javascript">
+        function setDataHtml(Id,data)
+        {
+            document.getElementById(Id).innerHTML=data;
+        }
+    </script>
+    <script type="text/javascript">
+        document.getElementById("tddepartname").innerHTML=depart.departname;
+        setDataHtml("tddepartid",depart.departid);
+        tablebody=document.getElementById("tablebody");
+        for(i=0;i<depart.employees.length;i++)
+            {
+                emp=depart.employees[i];
+                //create tr
+                tr=document.createElement("tr");
+                tdid=document.createElement("td");
+                tdid.innerHTML=emp.employeeid
+                tr.appendChild(tdid);
+                tdname_email=document.createElement("td");
+                tdname_email.innerHTML=emp.name+"<br>"+emp.email;
+                tr.appendChild(tdname_email);
+                tablebody.appendChild(tr);
+            }
+    </script>
+</body>
+</html>

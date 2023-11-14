@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function changeBackgroundOver (obj) /*obj là tham số hình thức, có thể để tr hay biến gì đều được*/
+            {
+                obj.style.backgroundColor='blue'
+            }
+            function changeBackgroundOut (Meo) /*obj là tham số hình thức, có thể để tr hay biến gì đều được*/
+            {
+                Meo.style.backgroundColor='green'
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1pt">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>Unique Price</th>
+                </tr>
+            </thead>
+            <tbody style="background-color: yellow;"
+                    onmouseover="changeBackgroundOver(this)"
+                    onmouseout="changeBackgroundOut(this)">
+                <tr>
+                    <td>P-1</td>
+                    <td>Coca</td>
+                    <td>15$</td>
+                </tr>
+                <tr>
+                    <td>P-2</td>
+                    <td>Pepsi</td>
+                    <td>25$</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

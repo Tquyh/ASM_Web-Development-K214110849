@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function createSelect(id, from, to)
+            {
+                //get element from id:
+                select=document.getElementById(id)
+                for(i=from;i<=to; i++)
+                {
+                    option=document.createElement("option")
+                    option.value=i
+                    option.innerText=i
+                    select.appendChild(option)
+                }
+            }
+        </script>
+        <!--Table Insert ở dưới-->
+        <style type="text/css">
+            table, td {
+                border: solid;
+                border-collapse: collapse
+            }
+            img {
+                cursor: pointer
+    }
+        </style>
+        <script type="text/javascript">
+            function insertLast()
+            {
+                tbl = document.getElementById("tbl")
+                tr = document.createElement("tr")
+                td1 = document.createElement("td")
+                td2 = document.createElement("td")
+                td3 = document.createElement("td")
+                id = document.getElementById("id").value
+                name = document.getElementById("name").value
+                gender = document.getElementById("gender").value
+                email = document.getElementById("email").value
+                td1.innerText = name
+                td2.innerText = email
+                td3.innerText = gender
+                td4.innerText = hobbies
+                td5.innerText - color
+                
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+                tr.appendChild(td3)
+                tbl.appendChild(tr)
+            }
+            function processDelete(img) {
+                tbl = document.getElementById("tbl")
+                vtDelete=img.parentNode.parentNode.rowIndex
+                tbl.deleteRow(vtDelete)
+            }
+
+            function resetForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("name").focus();
+            }
+
+            function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            if (name === "") {
+                alert("Name cannot be left blank");
+                return false;
+            }
+
+            if (!isValidEmail(email)) {
+                alert("Email must be valid");
+                return false;
+            }
+
+            displayFormData();
+            }
+
+            function isValidEmail(email) {
+            // Regular expression for email validation
+            var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            return emailRegex.test(email);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Member Registration</h1>
+        <hr/>
+        <p>Name (*) <input type="text" id="name" name="name" /></p>
+        <p>Birthday (*) &nbsp;
+            Day: <select id="selectday"></select>
+            Month: <select id="selectmonth"></select>
+            Year: <select id="selectyear"></select>
+        </p>
+        <p>
+            Gender (*):
+            <input type="radio" name="gender" id="Man"> Man
+            <input type="radio" name="gender" id="Woman"> Woman
+        </p>
+        <p>Email (*) <input type="text" id="email" name="email" /></p>
+        <p>
+            Your Favourite:
+            <ul>
+                <input type="checkbox" name="hobbies" id="checkbox1"> Shopping
+            </ul>
+            <ul>
+                <input type="checkbox" name="hobbies" id="checkbox2"> Tourism
+            </ul>
+            <ul>
+                <input type="checkbox" name="hobbies" id="checkbox3"> Chat
+            </ul>
+            <ul>
+                <input type="checkbox" name="hobbies" id="checkbox4"> Read a book
+            </ul>
+            <ul>
+                <input type="checkbox" name="hobbies" id="checkbox5"> Listening to music
+            </ul>
+        </p>
+            
+        <p>
+            Your Favourite Color:
+            <ul>
+                <input type="radio" name="radio1" id="radio1"> 
+                <label style="background-color: blue;" for="radio1">Blue</label>
+            </ul>
+            <ul>
+                <input type="radio" name="radio1" id="radio2">
+                <label style="background-color: red;" for="radio2">Red</label>
+            </ul>
+            <ul>
+                <input type="radio" name="radio1" id="radio3">
+                <label style="background-color: yellow;" for="radio3">Yellow</label>
+            </ul>
+            <ul>
+                <input type="radio" name="radio1" id="radio4">
+                <label style="background-color: green;" for="radio4">Green</label>
+            </ul>
+            <ul>
+                <input type="radio" name="radio1" id="radio5">
+                <label style="background-color: violet;" for="radio5">Violet</label>
+            </ul>
+        </p>
+        <div>
+            <button type="button" onclick="insertLast()" onclick="validateForm()">Sign up</button>
+            <input type="reset" value="Reset" name="clear" id="reset">
+        </div>
+        <p></p>
+
+        <table id="tbl" border="1pt">
+            <thead>
+                <tr style="background-color: blue; color:white">
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Gender</td>
+                    <td>Birthday</td>
+                    <td>Hobbies</td>
+                    <td>Colors</td>
+                </tr>
+            </thead>
+            <tr>
+                <td>John</td>
+                <td>john@gmail.com</td>
+                <td>Man</td>
+                <td>02/02/1990</td>
+                <td>Reading</td>
+                <td>Yellow</td>
+            </tr> 
+            <tr>
+                <td>Peter</td>
+                <td>peter@gmail.com</td>
+                <td>Man</td>
+                <td>01/01/1992</td>
+                <td>Chat, Reading</td>
+                <td>Read</td>
+            </tr>
+            <tr>
+                <td>Lucy</td>
+                <td>lucy@gmail.com</td>
+                <td>Woman</td>
+                <td>01/02/2005</td>
+                <td>Listening, Chat</td>
+                <td>Violet</td>
+            </tr>
+        </table>
+        <script>
+            // JavaScript functions to handle mouseover and mouseleave events
+            function handleMouseOver(row) {
+                row.style.backgroundColor = 'pink';
+            }
+
+            function handleMouseLeave(row) {
+                if (row.rowIndex % 2 === 0) {
+                    row.style.backgroundColor = 'rgb(216, 255, 216)';
+                } else {
+                    row.style.backgroundColor = 'rgb(133, 198, 255)';
+                }
+            }
+        </script>
+        
+        <!--Goi truy xuat ngay thang-->
+        <script type="text/javascript">
+            createSelect("selectday",1,31)
+            createSelect("selectmonth",1,12)
+            currentYear = new Date().getFullYear()
+            createSelect("selectyear",1900,currentYear)
+        </script>
+        
+    </body>
+</html>

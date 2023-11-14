@@ -1,0 +1,38 @@
+<p class="MyStyle1">signup works!</p>
+<p class="{{redStyle}}">SIGN IN</p>
+<p [class]="redStyle">Vui long nhap</p>
+<p class="{{complexStyle}}">Hello K21411C</p>
+<table>
+    <tr>
+        <td>Full Name</td>
+        <td>
+            <input type="text" #fullName>
+        </td>
+    </tr>
+    <tr>
+        <td>User Name</td>
+        <td>
+            <input type="text" value="{{username}}" #userName>
+        </td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td>
+            <input type="password" #password>
+        </td>
+    </tr>
+    <tr>
+        <td>Confirm Password</td>
+            <td>
+                <input type="password" #comfirmpw>
+            </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <button type="button" (click)="processSignup(fullName.value, userName.value)">Sign up</button>
+            &nbsp;
+            <button type="reset">Reset</button>
+        </td>
+    </tr>
+</table>

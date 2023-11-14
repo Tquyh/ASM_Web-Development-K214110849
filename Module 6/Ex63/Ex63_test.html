@@ -1,0 +1,253 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            if (name === "") {
+                alert("Name cannot be left blank");
+                return false;
+            }
+
+            if (!isValidEmail(email)) {
+                alert("Email must be valid");
+                return false;
+            }
+
+            displayFormData();
+        }
+
+        function isValidEmail(email) {
+            // Regular expression for email validation
+            var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            return emailRegex.test(email);
+        }
+
+        function displayFormData() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+
+            var table = document.getElementById("tbl");
+            var newRow = table.insertRow(-1);
+
+            var nameCell = newRow.insertCell(0);
+            var emailCell = newRow.insertCell(1);
+            var genderCell = newRow.insertCell(2);
+
+            nameCell.innerText = name;
+            emailCell.innerText = email;
+            genderCell.innerText = gender;
+
+            resetForm();
+        }
+
+        function resetForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("name").focus();
+        }
+    </script>
+    <style type="text/css">
+        table, td {
+            border: solid;
+            border-collapse: collapse;
+        }
+        img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Member Registration</h1>
+    <hr/>
+    <p>Name (*) <input type="text" id="name" name="name" /></p>
+    <p>Birthday (*) &nbsp;
+        Day: <select id="selectday"></select>
+        Month: <select id="selectmonth"></select>
+        Year: <select id="selectyear"></select>
+    </p>
+    <p>
+        Gender (*):
+        <input type="radio" name="gender" id="Man" value="Man"> Man
+        <input type="radio" name="gender" id="Woman" value="Woman"> Woman
+    </p>
+    <p>Email (*) <input type="text" id="email" name="email" /></p>
+    <p>
+        Your Favourite:
+        <ul>
+            <input type="checkbox" name="hobbies" id="checkbox1"> Shopping
+        </ul>
+        <ul>
+            <input type="checkbox" name="hobbies" id="checkbox2"> Tourism
+        </ul>
+        <ul>
+            <input type="checkbox" name="hobbies" id="checkbox3"> Chat
+        </ul>
+        <ul>
+            <input type="checkbox" name="hobbies" id="checkbox4"> Read a book
+        </ul>
+        <ul>
+            <input type="checkbox" name="hobbies" id="checkbox5"> Listening to music
+        </ul>
+    </p>
+
+    <p>
+        Your Favourite Color:
+        <ul>
+            <input type="radio" name="color" id="color1" value="Blue"> 
+            <label style="background-color: blue;" for="color1">Blue</label>
+        </ul>
+        <ul>
+            <input type="radio" name="color" id="color2" value="Red">
+            <label style="background-color: red;" for="color2">Red</label>
+        </ul>
+        <ul>
+            <input type="radio" name="color" id="color3" value="Yellow">
+            <label style="background-color: yellow;" for="color3">Yellow</label>
+        </ul>
+        <ul>
+            <input type="radio" name="color" id="color4" value="Green">
+            <label style="background-color: green;" for="color4">Green</label>
+        </ul>
+        <ul>
+            <input type="radio" name="color" id="color5" value="Violet">
+            <label style="background-color: violet;" for="color5">Violet</label>
+        </ul>
+    </p>
+    <div>
+        <button type="button" onclick="validateForm()">Sign up</button>
+        <input type="reset" value="Reset" name="clear" id="reset">
+    </div>
+    <p></p>
+
+    <table id="tbl" border="1pt">
+        <thead>
+            <tr style="Tôi đã chỉnh sửa đoạn mã HTML và JavaScript để thực hiện các yêu cầu của bạn. Bạn có thể sử dụng đoạn mã sau:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var hobbies = document.querySelectorAll('input[name="hobbies"]:checked');
+            var color = document.querySelector('input[name="color"]:checked');
+
+            if (name === "") {
+                alert("Name cannot be left blank");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Email cannot be left blank");
+                return false;
+            }
+
+            if (gender === null) {
+                alert("Please select a gender");
+                return false;
+            }
+
+            if (hobbies.length === 0) {
+                alert("Please select at least one hobby");
+                return false;
+            }
+
+            if (color === null) {
+                alert("Please select a favorite color");
+                return false;
+            }
+
+            displayFormData(name, email, gender.value, hobbies, color.value);
+        }
+
+        function displayFormData(name, email, gender, hobbies, color) {
+            var table = document.getElementById("tbl");
+            var newRow = table.insertRow(-1);
+
+            var nameCell = newRow.insertCell(0);
+            var emailCell = newRow.insertCell(1);
+            var genderCell = newRow.insertCell(2);
+            var hobbiesCell = newRow.insertCell(3);
+            var colorCell = newRow.insertCell(4);
+
+            nameCell.innerText = name;
+            emailCell.innerText = email;
+            genderCell.innerText = gender;
+            hobbiesCell.innerText = Array.from(hobbies).map(hobby => hobby.value).join(', ');
+            colorCell.innerText = color;
+
+            resetForm();
+        }
+
+        function resetForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.querySelector('input[name="gender"]:checked').checked = false;
+            document.querySelectorAll('input[name="hobbies"]:checked').forEach(hobby => hobby.checked = false);
+            document.querySelector('input[name="color"]:checked').checked = false;
+            document.getElementById("name").focus();
+        }
+    </script>
+    <style type="text/css">
+        table, td {
+            border: solid;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Member Registration</h1>
+    <hr/>
+    <p>Name (*) <input type="text" id="name" name="name" /></p>
+    <p>Email (*) <input type="text" id="email" name="email" /></p>
+    <p>
+        Gender (*):
+        <input type="radio" name="gender" id="Man" value="Man"> Man
+        <input type="radio" name="gender" id="Woman" value="Woman"> Woman
+    </p>
+    <p>
+        Your Hobbies (*):
+        <ul>
+            <input type="checkbox" name="hobbies" id="checkbox1" value="Shopping"> Shopping
+        </ul>
+        <ul>
+            <input type="checkbox" name="hobbies" id="checkbox2" value="Tourism"> Tourism
+        </ul>
+        <ul>
+            <input type="checkbox" name="hobbies" id="checkbox3" value="Chat"> Chat
+        </ul>
+        <ul>
+            <input type="checkbox" name="hobbies" id="checkbox4" value="Read a book"> Read a book
+        </ul>
+        <ul>
+            <input type="checkbox" name="hobbies" id="checkbox5" value="Listening to music"> Listening to music
+        </ul>
+    </p>
+
+    <p>
+        Your Favorite Color (*):
+        <ul>
+            <input type="radio" name="color" id="color1" value="Blue"> Blue
+        </ul>
+        <ul>
+            <input type="radio" name="color" id="color2" value="Red"> Red
+        </ul>
+        <ul>
+            <input type="radio" name="color" id="color3" value="Yellow"> Yellow
+        </ul>
+        <ul>
+            <input type="radio" name="color" id="color4" value="Green"> Green
+        </ul>
+        <ul>
+            <input type="radio" name="color" id="color5" value="Violet"> Violet
+        </ul>
+    </p>
+    <div>
+        <button type="button" onclick="validateForm()">Sign up</button>
+        <input type="reset" value="Reset" name

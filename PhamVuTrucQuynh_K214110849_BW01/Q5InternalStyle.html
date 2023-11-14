@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internal Style</title>
+    <style>
+        .content {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var content = document.getElementById("internal-style-content");
+            content.style.display = "block";
+        };
+    </script>
+</head>
+<body>
+    <div id="internal-style-content" class="content">
+        <h2 style="color:green">Internal Style</h2>
+        <p>
+            Internal styles are used to define CSS rules within the &lt;style&gt; tags of the HTML document's &lt;head&gt; section. These styles apply to the entire document or specific elements based on the selectors used.
+        </p>
+        <p style="background-color:  rgba(167, 201, 66, 0.64);">
+            Example:
+        </p>
+        <pre style="background-color:  rgba(167, 201, 66, 0.64);">
+            <code>
+                &lt;style&gt;
+                    p {
+                        color: blue;
+                        font-size: 16px;
+                    }
+                &lt;/style&gt;
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

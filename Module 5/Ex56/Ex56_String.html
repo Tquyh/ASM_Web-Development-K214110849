@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <style>
+            @import url(Ex56Style.css);
+            input, button{
+                width: 100%
+            }
+            textarea{
+                width: 100%
+            }
+        </style>
+        <script>
+            window.onload = function() {
+            {
+            const enter = document.getElementById("enter");
+            const countupper = document.getElementById("countupper");
+            const uppercasedis = document.getElementById("uppercasedis");
+            const oneword = document.getElementById("oneword");
+            const lowercasedis = document.getElementById("lowercasedis");
+            const wordcount = document.getElementById("wordcount");
+            const countlower = document.getElementById("countlower");
+            const vowels_consonants = document.getElementById("vowels_consonants");
+            const W3C = document.getElementById("W3C");
+            const inputa = document.getElementById("inputa");
+            const tdresult = document.getElementById("tdresult");
+            var inputBox = document.getElementById("inputa");
+            }
+            enter.onclick =function()
+            {
+                inputa.value = null;
+                tdresult.value = null;
+            }
+
+            uppercasedis.onclick=function()
+            {
+                tdresult.value = ""
+                tdresult.value = inputa.value.toUpperCase();
+            }
+        
+            }
+
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+        <h1>Using String Processing Function</h1>
+        <div class="content">
+            <div>
+                <fieldset>
+                    <legend><h2>InPut Data:</h2></legend>
+                    <textarea name="inputa" id="inputa" cols="30" rows="10"></textarea> 
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend><h2>Result:</h2></legend>
+                    <textarea name="result" id="tdresult" cols="30" rows="10"></textarea>
+                </fieldset>
+            </div>
+            <div align="center">
+                <button id="enter" >Enter Data</button>
+            </div>
+            <div align="center">
+                <input type="button" value="Count the number of uppercase characters"  id="countupper">
+            </div>
+            <div align="center">
+                <button id="uppercasedis">Uppercase display</button>
+            </div>
+            <div align="center">
+                <input type="button" value="Output one word per line" id="oneword">
+            </div>
+            <div align="center">
+                <input type="button" value="Lowercase display" id="lowercasedis">
+            </div>
+            <div align="center">
+                <input type="button" value="Word count" id="wordcount">
+            </div>
+            <div align="center">
+                <input type="button" value="Count the number of lowercase characters" id="countlower">
+            </div>
+            <div align="center">
+                <input type="button" value="Print vowels, consonants" id="vowels_consonants">
+            </div>
+        </div>
+            <div align="center">
+                <input type="button" value="W3C's String Processing Website" id="W3C">
+            </div>
+        </form>
+    </body>
+</html>

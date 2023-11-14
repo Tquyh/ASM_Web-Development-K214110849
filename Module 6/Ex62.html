@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <style type="text/css">
+            thead,tfoot
+            {
+                background-color:rgb(0, 100, 187);
+                color:white;
+            }
+
+            tbody tr:nth-child(2n+1)
+            {
+                background-color:rgb(255, 255, 255)
+            }
+            tbody tr:nth-child(2n) {
+                background-color: rgb(255, 234, 181)
+            }
+            /*tbody tr:hover
+            {
+                background-color:rgb(124, 255, 190);
+                cursor:pointer
+            }*/
+        </style>
+
+    </head>
+    <body>
+        <table border="1" style="width:80%">
+            <thead>
+                <th>#</th>
+                <th>Student ID</th>
+                <th>Student Name</th>
+            </thead>
+
+            <tbody>
+                <tr onmouseover="handleMouseOver(this)" onmouseleave="handleMouseLeave(this)">
+                    <td>1</td>
+                    <td>123456</td>
+                    <td>Albert Einstein</td>
+                </tr>
+                <tr onmouseover="handleMouseOver(this)" onmouseleave="handleMouseLeave(this)">
+                    <td>2</td>
+                    <td>321232</td>
+                    <td>Niels Bohr</td>
+                </tr>
+                <tr onmouseover="handleMouseOver(this)" onmouseleave="handleMouseLeave(this)">
+                    <td>3</td>
+                    <td>987544</td>
+                    <td>Stephen Hawking</td>
+                </tr>
+                <tr onmouseover="handleMouseOver(this)" onmouseleave="handleMouseLeave(this)">
+                    <td>4</td>
+                    <td>359687</td>
+                    <td>Isaac Newton</td>
+                </tr>
+                <tr onmouseover="handleMouseOver(this)" onmouseleave="handleMouseLeave(this)">
+                    <td>5</td>
+                    <td>574878</td>
+                    <td>Nikola Tesla</td>
+                </tr>
+            </tbody>
+            
+            <tfoot>
+                <td colspan="3">Design by John</td>
+            </tfoot>
+        </table>
+        <script>
+            // JavaScript functions to handle mouseover and mouseleave events
+            function handleMouseOver(row) {
+                row.style.backgroundColor = 'pink';
+            }
+
+            function handleMouseLeave(row) {
+                if (row.rowIndex % 2 === 0) {
+                    row.style.backgroundColor = 'rgb(216, 255, 216)';
+                } else {
+                    row.style.backgroundColor = 'rgb(133, 198, 255)';
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Books</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid green;
+        }
+        
+        th {
+            background-color: #98bf21;
+        }
+        
+        img {
+            max-width: 100px;
+        }
+    </style>
+    <script>
+        function displayBooks() {
+            var books = [
+                {
+                    title: "Where's Spot?",
+                    description: "With its bold blue cover, this board book edition of Eric Hill’s classic story featuring everyone’s favorite puppy is just as iconic as the first lift-the-flap edition.",
+                    image: "https://images-na.ssl-images-amazon.com/images/I/81KAMv9wetL._AC_UL160_SR160,160_.jpg"
+                },
+                {
+                    title: "Lansinoh Stay Dry Disposable Nursing Pads",
+                    description: "SUPERIOR ABSORBENCY FOR EXTRA CONFIDENCE - These pads absorb 20 times their weight to keep you confident and dry day and night RECOMMENDED BY MOMS - Convenient, easy to use, and very absorbent, Lansinoh nursing pads have an InvisiLock core to instantly capture and disperse moisture",
+                    image: "https://images-na.ssl-images-amazon.com/images/I/71e0wNZ3ZQL._AC_UL160_SR160,160_.jpg"
+                },
+                {
+                    title: "Goodnight Moon",
+                    description: "In a great green room, tucked away in bed, is a little bunny. \"Goodnight room, goodnight moon.\" And to all the familiar things in the softly lit room—to the picture of the three little bears sitting on chairs, to the clocks and his socks, to the mittens and the kittens, to everything one by one—the little bunny says goodnight.",
+                    image: "https://images-na.ssl-images-amazon.com/images/I/81t-IstQ+ZL._AC_UL232_SR232,232_.jpg"
+                },
+                {
+                    title: "The Very Hungry Caterpillar",
+                    description: "THE all-time classic picture book, from generation to generation, sold somewhere in the world every 30 seconds! A sturdy and beautiful book to give as a gift for new babies, baby showers, birthdays, and other new beginnings!",
+                    image: "https://images-na.ssl-images-amazon.com/images/I/91vnzZO5yPL._AC_UL232_SR232,232_.jpg"
+                },
+                {
+                    title: "Brown Bear, Brown Bear, What Do You See?",
+                    description: "A big happy frog, a plump purple cat, a handsome blue horse, and a soft yellow duck--all parade across the pages of this delightful book. Children will immediately respond to Eric Carle's flat, boldly colored collages. Combined with Bill Martin's singsong text, they create unforgettable images of these endearing animals.",
+                    image: "https://images-na.ssl-images-amazon.com/images/I/81kZ3Gl3WKL._AC_UL254_SR254,254_.jpg"
+                }
+            ];
+            
+            var table = "<table><tr><th>Title</th><th>Description</th><th>Image</th></tr>";
+            for (var i = 0; i < books.length; i++) {
+                var title = books[i].title;
+                var description = books[i].description;
+                var image = books[i].image;
+                table += "<tr><td>" + title + "</td><td>" + description + "</td><td><img src='" + image + "' alt='" + title + "'></td></tr>";
+            }
+            table += "</table>";
+            document.getElementById("bookTable").innerHTML = table;
+        }
+        window.onload = displayBooks;
+    </script>
+</head>
+<body>
+    <div id="bookTable"></div>
+</body>
+</html>

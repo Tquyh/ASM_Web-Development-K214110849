@@ -1,0 +1,63 @@
+<html>
+<head>
+    <style>
+        thead {
+            background-color: rgb(188, 237, 188);
+        }
+    </style>
+    <script type="text/javascript">
+        // khởi tạo đối tượng XMLHttpRequest để tạo yêu cầu http
+        var xmlhttp = new XMLHttpRequest();
+
+        // đặt hamf xử lý skien onreadystatechange cho đối tượng XMLHttpRequest
+        xmlhttp.onreadystatechange = function () {
+            //ktra trạng thái đã yêu cầu hoàn thành và mã trạng thái thành công
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //lấy dữ liệu xml từ đối tượng XMLHttpRequest
+                var xmlDoc = xmlhttp.responseXML;
+
+                //Lấy gtri phần tử đầu tiên có thẻ ... trong tệp xml
+                var id = xmlDoc.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+                var name = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                var birthday = xmlDoc.getElementsByTagName("birthday")[0].childNodes[0].nodeValue;
+                var gender = xmlDoc.getElementsByTagName("gender")[0].childNodes[0].nodeValue;
+
+                //Đặt nội dung của phần từ có ID là "td..." cho biến ...
+                document.getElementById("tdid").innerHTML = id;
+                document.getElementById("tdname").innerHTML = name;
+                document.getElementById("tdbirthday").innerHTML = birthday;
+                document.getElementById("tdgender").innerHTML = gender;
+            }
+        };
+        //Mở yêu cầu GET đến tệp XML "Ex66.xml"
+        xmlhttp.open("GET", "Ex66.xml", true);
+        //Gửi yêu cầu HTTP
+        xmlhttp.send();
+    </script>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td colspan="2">Student information</td>
+            </tr>
+        </thead>
+        <tr>
+            <td>Student ID:</td>
+            <td id="tdid"></td>
+        </tr>
+        <tr>
+            <td>Student Name:</td>
+            <td id="tdname"></td>
+        </tr>
+        <tr>
+            <td>Birthday:</td>
+            <td id="tdbirthday"></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td id="tdgender"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu</title>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <ul id="menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <script>
+    // Get the menu element
+    var menu = document.getElementById("menu");
+
+    // Add event listener to each menu item
+    menu.addEventListener("click", function(event) {
+      var target = event.target;
+      
+      // Check if the clicked element is a link
+      if (target.tagName === "A") {
+        // Get the text of the clicked link
+        var linkText = target.textContent;
+        
+        // Display the clicked link text
+        console.log("Clicked: " + linkText);
+      }
+    });
+  </script>
+</body>
+</html>

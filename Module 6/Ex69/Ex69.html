@@ -1,0 +1,80 @@
+<html>
+<head>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            width: 300px;
+            text-align: left;
+        }
+
+        #head {
+            background-color: green;
+            color: white;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var selectTitle = document.getElementById("selectTitle");
+            selectTitle.addEventListener("change", function() {
+                loadXMLDoc();
+            });
+            
+            function loadXMLDoc() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        Ex69Function(xmlhttp);
+                    }
+                };
+                xmlhttp.open("GET", "Ex69.xml", true);
+                xmlhttp.send();
+            }
+            
+            function Ex69Function(xmlhttp) {
+                var selectedTitle = selectTitle.value;
+                var xmlDoc = xmlhttp.responseXML;
+                var employees = xmlDoc.getElementsByTagName("employee");
+                var contentofEmp = document.getElementById("contentofEmp");
+                contentofEmp.innerHTML = "";
+
+                for (var i = 0; i < employees.length; i++) {
+                    if (employees[i].getAttribute("title") === selectedTitle) {
+                        const row = contentofEmp.insertRow();
+                        row.insertCell(0).textContent = employees[i].getAttribute("id");
+                        row.insertCell(1).textContent = employees[i].getElementsByTagName("name")[0].textContent;
+                        const phones = employees[i].getElementsByTagName("phone");
+                        let phoneNumbers = "";
+                        for (var j = 0; j < phones.length; j++) {
+                            phoneNumbers += phones[j].textContent + " ";
+                        }
+                        row.insertCell(2).textContent = phoneNumbers.trim();
+                    }
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Title</th>
+            <td colspan="2">
+                <select id="selectTitle">
+                    <option value="Architect">Architect</option>
+                    <option value="Engineer">Engineer</option>
+                    <option value="Teacher">Teacher</option>
+                </select>
+            </td>
+        </tr>
+        <tr id="head">
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Phone</th>
+        </tr>
+
+        <tbody id="contentofEmp">
+        </tbody>
+    </table>
+</body>
+</html>

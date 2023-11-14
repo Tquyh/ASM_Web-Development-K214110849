@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function giaiPTb2()
+            {
+                var a=eval(myform.hsa.value)
+                var b=eval(myform.hsb.value)
+                var c=eval(myform.hsc.value)
+                ketqua=document.getElementById("tdresult")
+                // Tính delta
+                var delta = b * b - 4 * a * c;
+
+                // Kiểm tra giá trị của delta
+                if (delta > 0) 
+                {
+                    // Hai nghiệm phân biệt
+                    var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                    var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                    ketqua.innerHTML="x1 = " + x1 + ", x2 = " + x2;
+                } 
+                else if (delta === 0) 
+                {
+                    // Nghiệm kép
+                    var x = -b / (2 * a);
+                    ketqua.innerHTML="x = " + x;
+                } 
+                else {
+                    // Không có nghiệm thực
+                    ketqua.innerHTML="PT không có nghiệm thực.";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table border="1">
+                <tr>
+                    <td colspan="2" align="center", style="background-color: aquamarine;">
+                        The quadratic equation
+                    </td>
+                </tr>
+                <tr>
+                    <td>a:</td>
+                    <td><input type="number" id="hsa" name="hsa"></td>
+                </tr>
+                <tr>
+                    <td>b:</td>
+                    <td><input type="number" id="hsb" name="hsb"></td>
+                </tr>
+                <tr>
+                    <td>c:</td>
+                    <td><input type="number" id="hsc" name="hsc"></td>
+                </tr>
+                <tr>
+                    <td>Result:</td>
+                    <td id="tdresult"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="button" value="Find Solution" onclick="giaiPTb2()">
+                        <input type="reset" value="Clear">
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+    </body>
+</html>

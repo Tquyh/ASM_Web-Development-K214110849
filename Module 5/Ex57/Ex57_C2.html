@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script src="function_Ex57.js"></script>
+    </head>
+    <body>
+        <form name="myform">
+            <table border="1" align="center" style="text-align: center;">
+                <tr>
+                    <th>Part Number</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Item table</th>
+                </tr>
+                <tr>
+                    <td>C112</td>
+                    <td>Mouse</td>
+                    <td>19.95$</td>
+                    <td><input type="text" id="Qty1" name="Qty1" oninput="ItemMoney()"></td>
+                    <td id="item1"></td>
+                </tr>
+                <tr>
+                    <td>B124</td>
+                    <td>Keyboard US</td>
+                    <td>29.95$</td>
+                    <td><input type="text" id="Qty2" name="Qty2" oninput="ItemMoney()"></td>
+                    <td id="item2"></td>
+                </tr>
+                <tr>
+                    <td>U125</td>
+                    <td>USB KingMax</td>
+                    <td>39.95$</td>
+                    <td><input type="text" id="Qty3" name="Qty3" oninput="ItemMoney()"></td>
+                    <td id="item3"></td>
+                </tr>
+                <tr >
+                    <td colspan="4" style="text-align:right;">
+                        Total:
+                    </td>
+                    <td id="total"></td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align: right;">
+                        <input type="button" value="Sum" 
+                        style="color: white; 
+                        background-color: orange; 
+                        width: 60px; 
+                        border: 1px;
+                        cursor: pointer"  
+                        onclick="TotalBill()">
+                    </td>
+                </tr>
+            </table>
+            
+        </form>
+    </body>
+</html>

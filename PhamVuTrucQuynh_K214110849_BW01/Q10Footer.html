@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Design</title>
+    <style>
+        .left-align {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="left-align">
+        <p>Designed by Student <span id="student-name">XYZ</span>, today is <span id="current-date">ABC</span>.</p>
+    </div>
+
+    <script>
+        var currentDate = new Date().toISOString().slice(0, 10);
+        var studentName = "Pham Vu Truc Quynh";
+        document.getElementById("student-name").innerHTML = studentName;
+        document.getElementById("current-date").innerHTML = currentDate;
+    </script>
+</body>
+</html>

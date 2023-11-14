@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <script>
+            function ItemMoney() {
+                var Qty1 = eval(myform.Qty1.value);
+                if (!isNaN(Qty1)) 
+                    {
+                    item1 = document.getElementById("item1");
+                    item1.innerHTML = Qty1 * 19.95 + " $";
+                    } 
+
+                var Qty2 = eval(myform.Qty2.value);
+                if (!isNaN(Qty2)) 
+                    {
+                    item2 = document.getElementById("item2");
+                    item2.innerHTML = Qty2 * 29.95 + " $";
+                    } 
+
+                var Qty3 = eval(myform.Qty3.value);
+                if (!isNaN(Qty3)) 
+                    {
+                    item3 = document.getElementById("item3");
+                    item3.innerHTML = Qty3 * 39.95 + " $";
+                    } 
+            }
+
+            function TotalBill() {
+                var Qty1 = eval(myform.Qty1.value);
+                var Qty2 = eval(myform.Qty2.value);
+                var Qty3 = eval(myform.Qty3.value);
+                total = Qty1 * 19.95 + Qty2 * 29.95 + Qty3 * 39.95;
+
+                var totalElement = document.getElementById("total");
+                totalElement.innerHTML = total + " $";
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table border="1" align="center" style="text-align: center;">
+                <tr>
+                    <th>Part Number</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Item table</th>
+                </tr>
+                <tr>
+                    <td>C112</td>
+                    <td>Mouse</td>
+                    <td>19.95$</td>
+                    <td><input type="text" id="Qty1" name="Qty1" oninput="ItemMoney()"></td>
+                    <td id="item1"></td>
+                </tr>
+                <tr>
+                    <td>B124</td>
+                    <td>Keyboard US</td>
+                    <td>29.95$</td>
+                    <td><input type="text" id="Qty2" name="Qty2" oninput="ItemMoney()"></td>
+                    <td id="item2"></td>
+                </tr>
+                <tr>
+                    <td>U125</td>
+                    <td>USB KingMax</td>
+                    <td>39.95$</td>
+                    <td><input type="text" id="Qty3" name="Qty3" oninput="ItemMoney()"></td>
+                    <td id="item3"></td>
+                </tr>
+                <tr >
+                    <td colspan="4" style="text-align:right;">
+                        Total:
+                    </td>
+                    <td id="total"></td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align: right;">
+                        <input type="button" value="Sum" 
+                        style="color: white; 
+                        background-color: orange; 
+                        width: 60px; 
+                        border: 1px;
+                        cursor: pointer"  
+                        onclick="TotalBill()">
+                    </td>
+                </tr>
+            </table>
+            
+        </form>
+    </body>
+</html>
